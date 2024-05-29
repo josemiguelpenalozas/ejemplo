@@ -41,6 +41,8 @@ while True:
 
 
     elif opcion==2:
+        os.system("cls")
+        print("regitar usuario")
         nombre=input("ingrese el nombre que usara en esta cuenta: ")
         clave=input("ingrese la clave que desee: ")
 
@@ -55,7 +57,24 @@ while True:
 
 
     elif opcion==3:
-        pass
+        i=0
+        os.system("cls")
+        print("Eliminacion de cuenta")
+        eliminada="no"
+        pregunta=input("usuario: ")
+        pregunta_clave=input("clave: ")
+        while i<len(cuentas):
+            if cuentas[i]["nombre"]==pregunta and cuentas[i]["clave"]==pregunta_clave:
+                cuentas.pop(i)
+                eliminada="si"
+                break
+            i=i+1
+        if eliminada=="no":
+            print("cuenta no encontrada")
+        else:
+            print("cuenta eliminada")
+        print("presione cualquier tecla para continuar")
+        msvcrt.getch()
 
 
     else:
